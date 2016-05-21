@@ -1,6 +1,6 @@
 # pbfy
 
-[demo](https://debug1.pauldominik.com/pbfy/)
+[demo](https://debug1.pauldominik.com/pbfy/demo.html)
 
 # methods
 
