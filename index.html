@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Pbfy demo</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link id="tabsCss" rel="stylesheet" href="tabs.css">
+	<style>
+		#pbfyMe {
+			display:none; /*hide onload*/
+		}
+	</style>
+</head>
+<body>
+
+<div class="container">
+
+	<header>
+		<h1>Pbfy demo</h1>
+		<p><a href="https://github.com/pauldominik/pbfy" target="_blank">https://github.com/pauldominik/pbfy</a></p>
+	</header>
+
+	<hr>
+
+	<ul id="pbfyMe">
+		<li>PAYMENT OPTION Make Longer</li>
+		<li>ORDER COMPLETE</li>
+		<li>title 3</li>
+		<li>title 4</li>
+	</ul>
+
+	<hr>
+
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="row">
+				<div class="col-xs-3">
+					<div class="form-group">
+						<label>Accent</label>
+						<input type="text" class="form-control" id="accent" placeholder="black" value="black">
+					</div>
+				</div>
+				<div class="col-xs-3">
+					<div class="form-group">
+						<label>Tab BG</label>
+						<input type="text" class="form-control" id="tabColor" placeholder="orange" value="orange">
+					</div>
+				</div>
+				<div class="col-xs-3">
+					<div class="form-group">
+						<label>Text Color</label>
+						<input type="text" class="form-control" id="textColor" placeholder="gray" value="gray">
+					</div>
+				</div>
+				<div class="col-xs-3">
+					<div class="form-group">
+						<label>Divider</label>
+						<input type="text" class="form-control" id="dividerColor" placeholder="whitesmoke" value="whitesmoke">
+					</div>
+				</div>
+			</div>
+
+			<button class="btn btn-primary" onclick="changeColors()">Change colors</button>
+
+			<hr>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-6">
+			<div class="btn-group">
+				<button class="btn btn-default" onclick="demoMoveBack()">Back</button>
+				<button class="btn btn-default" onclick="demoMoveForward()">Forward</button>
+				<button class="btn btn-default" onclick="demoGetIndex()">Get Index</button>
+				<button class="btn btn-default" onclick="demoGetActiveTabHtml()">getActiveHtml</button>
+			</div>
+		</div>
+		<div class="col-xs-4" style="text-align:right">
+			<div class="form-group">
+				<label>HighlightTabByIndex</label>
+			</div>
+		</div>
+		<div class="col-xs-2">
+				<select name="whichIndex" id="whichIndex" class="form-control" onchange="demoHighlightTabByIndex()">
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+				</select>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+				<div id="holder" style="height:50px;width:100%"></div>
+		</div>
+	</div>
+
+
+
+
+</div><!-- /.container -->
+
+
+	<!-- scripts -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script id="tabsJs" src="tabs.js"></script>
+	<script>
+		$('#pbfyMe').pbfy();
+
+	//demo functions
+	var demoGetIndex = function(){
+		alert(pb.i())
+	}
+	var demoMoveForward = function(){
+		pb.f()
+	}
+	var demoMoveBack = function(){
+		pb.b()
+	}
+	var demoHighlightTabByIndex = function(){
+		pb.hl($('#whichIndex').val())
+	}
+	var demoGetActiveTabHtml = function(){
+		$('#holder').html(pb.g().clone());
+	}
+	var changeColors = function(){
+		pb.c({accent:$('#accent').val(), tabColor:$('#tabColor').val(), textColor:$('#textColor').val(), dividerColor:$('#dividerColor').val()})
+	}
+	</script>
+</body>
+</html>
