@@ -4,6 +4,7 @@
 
 		// options
 		var settings = $.extend({
+			index: 1,
 			accent: '#12a8df',
 			tabColor: '#fff',
 			textColor:'#000',
@@ -96,27 +97,28 @@
 		// selector
 		var $listToPbfy = this;
 
-
 		// build pb wrapper
 		var $pb = $('<div id="pb" class="pb"></div>');
 		var $pbList = $('<ul class="pb-list"></ul>');
 
-		// hide orig list, get the titles, add list items to pb
+		// hide orig list, get the titles/text, then add list items to pb
 		var stepsArr = [];
 		$listToPbfy.hide().after($pb).find('li').each(function(i, em){
-
 			stepsArr.push($(em).text());
 			$pbList.append('<li class="pb-step"><div class="pb-span-wrapper"><span class="pb-span"><i class="pb-index">'+(i+1)+'</i><b class="pb-text">'+$(em).text()+'</b></span></div></li>');
-
 		});
-		// style and make index 1 active, before appending
-		$pbList.find('.pb-step').width(100/stepsArr.length+'%').eq(0).addClass('active ');
-		$pbList.find('.pb-step').eq(1).addClass('next');
-		// set colors, before appending
+
+		// setup
+		// 1: set auto width
+		$pbList.find('.pb-step').width(100/stepsArr.length+'%');
+		// 2: set colors
 		this.c();
-
+		// 3: append
 		$pb.append($pbList);
+		// 4: highlight
+		this.hl(settings.index);
 
+		// leak global
 		return window.pb = this;
 		
 	};
