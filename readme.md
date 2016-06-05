@@ -5,7 +5,7 @@
 # methods
 
 - pb.hl() : highlight
-- pb.i(): get index
+- pb.getActiveTabIndex(): gets the index of active tab
 - pb.f(): forward
 - pb.b(): back
 - pb.g(): get active html

@@ -4,38 +4,39 @@
 	<meta charset="UTF-8">
 	<title>Pbfy</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-	<link id="tabsCss" rel="stylesheet" href="tabs.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link id="pbfyCss" rel="stylesheet" href="./pbfy.css">
 	<style>
 		#pbfyMe {
-			display:none; /*hide onload*/
+			display:none;
 		}
 	</style>
 </head>
 <body>
 
-<div class="container">
+	<div class="container">
 
-	<header>
-		<h1>Pbfy</h1>
-		<p>repo: <a href="https://github.com/pauldominik/pbfy" target="_blank">https://github.com/pauldominik/pbfy</a></p>
-		<p>full demo:  <a href="https://github.com/pauldominik/pbfy/demo.html" target="_blank">https://github.com/pauldominik/pbfy/demo.html</a></p>
-	</header>
+		<header>
+			<h1>Pbfy</h1>
+			<p>repo: <a href="//github.com/pauldominik/pbfy" target="_blank">//github.com/pauldominik/pbfy</a></p>
+			<p>full demo:  <a href="./demo.html" target="_blank">//debug1.pauldominik.com/pbfy/demo.html</a></p>
+		</header>
 
-	<hr>
+		<hr>
 
-	<ul id="pbfyMe">
-		<li>PAYMENT OPTION Make Longer</li>
-		<li>ORDER COMPLETE</li>
-		<li>title 3</li>
-		<li>title 4</li>
-	</ul>
+		<ul id="pbfyMe">
+			<li>PAYMENT OPTION Make Longer</li>
+			<li>ORDER COMPLETE</li>
+			<li>title 3</li>
+			<li>title 4</li>
+		</ul>
 
-</div><!-- /.container -->
+	</div><!-- /.container -->
 
 	<!-- scripts -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	<script id="tabsJs" src="tabs.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="./lib/jquery-1.7.2.js"><\/script>')</script>
+	<script id="pbfyJs" src="./pbfy.js"></script>
 	<script>
 		$('#pbfyMe').pbfy();
 	</script>
