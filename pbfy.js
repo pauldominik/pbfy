@@ -97,6 +97,10 @@
 		// selector
 		var $listToPbfy = this;
 
+		// remove old instances
+		$('#pb').remove();
+		$('#pb-list').remove();
+
 		// build pb wrapper
 		var $pb = $('<div id="pb" class="pb"></div>');
 		var $pbList = $('<ul class="pb-list"></ul>');
